@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/SignUp.css">
+    
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>We Go the <br>
+            Extra Mile for You</h2>
+        <p>Need a lift? We can help.
+            SF ’s most reliable taxi service since 2003</p>
+    </div>
+    <div id="menu">
+        <div id="navbar1">
+            <a class="active" href="./home.html"><img src="./img/Car-Icon1.png"> BAYSIDE TAXI</a>
+
+        </div>
+        <div id="navbar2">
+            <a href="./VIP_Service.html">包車出遊</a>
+            <!-- <a href="http://127.0.0.1:5500/Project/Airport_Transfer.html">機場包車</a> -->
+            <a href="./attraction.html">各區景點</a>
+            <a href="./SignUp.html">加入會員</a>
+            <a href="./login.html">會員登入</a>
+        </div>
+    </div>
+
+    <div class="content"></div>
+    <div class="mybg">
+        <div class="hero">
+            <h1>註冊帳號</h1>
+            <div class="signupBox">
+                <div class="leftBox">
+                    <form>
+                        <input type="email" placeholder="帳號 / Email" required class="inputBox">
+                        <input type="text" placeholder="暱稱" required class="inputBox">
+                        <input type="password" placeholder="輸入密碼" required class="inputBox">
+                        <input type="password" placeholder="確認密碼" required class="inputBox">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">我已閱讀並接受條款</label>
+                        <button type="submit">註冊<span>&#x27f6;</span></button>
+                    </form>
+                </div>
+                <div class="rightBox">
+                    <a href="" class="fb_Link"><i class="fa-brands fa-facebook"></i> Connect with Facebook</a>
+                    <a href="" class="tw_Link"><i class="fa-brands fa-twitter"></i> Connect with Twitter</a>
+                    <a href="" class="g_Link"><i class="fa-brands fa-google"></i> Connect with Google</a>
+                </div>
+            </div>
+            <p class="login_msg">已經有帳號 ?<a href="./login.html">Login Now</a></p>
+        </div>
+    </div>
+
+<hr>
+    <div class="mc-ft__cnt">
+        <div class="mc-ft__links" >
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">聯繫我們</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">顧客服務</li>
+                    <li class="mc-ft__list-item">一站式服務保障</li>
+                    <li class="mc-ft__list-item">網站意見</li>
+                    <li class="mc-ft__list-item"><a href=""><i class="fa-brands fa-facebook"></i></a><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">關於</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">關於我們</li>
+                    <li class="mc-ft__list-item">媒體訊息</li>
+                    <li class="mc-ft__list-item">條款及細則</li>
+                    <li class="mc-ft__list-item">隱私條款</li>
+                    <li class="mc-ft__list-item">Do Not Sell My Personal Information</li>
+                </ul>
+            </div>
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">其他服務</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">投資者關係</li>
+                    <li class="mc-ft__list-item">分銷夥伴合作計畫</li>
+                    <li class="mc-ft__list-item">成為當地體驗供應商</li>
+                    <li class="mc-ft__list-item">資訊安全性</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log($("input[type='checkbox']").prop("checked"))
+        window.onscroll = function () { myFunction() };
+
+        
+        var navbar = document.getElementById("menu");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        
+
+        
+        $("button").click(function(event) {
+            event.preventDefault()
+            if ($("input").val() != "" && $("input[type='checkbox']").prop("checked")) {
+                window.location.assign("./login.html")
+                alert("註冊成功!")
+            } else if($("input[type='checkbox']").prop("checked") == false){
+                alert("您尚未閱讀與同意條款")
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+
+body {
+    margin: 0;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background-image: url("../img/taix.PNG");
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h2,
+p {
+    color: white;
+}
+
+#navbar1 {
+    overflow: hidden;
+    float: left;
+    border-radius: 20px;
+    height: 51px;
+}
+
+#navbar2 {
+    overflow: hidden;
+    background-color: #333;
+    float: right;
+    border-radius: 20px;
+}
+
+#menu a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#menu a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#menu a.active {
+    position: relative;
+    background-color: #04AA6D;
+    color: white;
+    bottom: 12px;
+}
+
+.content {
+    padding: 16px;
+    position: absolute;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.active img {
+    position: relative;
+    height: 30px;
+    top: 8px
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.mc-ft__links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: flex;
+    flex-direction: row;
+    margin-left: 600px;
+}
+
+.mc-ft__block {
+    width: 247px;
+}
+
+.mc-ft__block-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.mc-ft__link-list {
+    font-size: 14px;
+    list-style: none;
+}
+
+.mc-ft__link-item {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+}
+
+.hero {
+    width: 100%;
+    min-height: 600px;
+    /* background: #292929; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.signupBox {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border: 1px solid #6b00d5;
+    border-radius: 20px;
+}
+
+.leftBox {
+    padding: 50px;
+    background-color: #6b00d5;
+    opacity: 0.6;
+    flex-basis: 50%;
+    flex-grow: 1;
+    color: #fff;
+    border-radius: 20px 0 0 20px;
+}
+
+.rightBox {
+    padding: 50px;
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+
+.inputBox {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 12px;
+    background: transparent;
+}
+
+::placeholder{
+    color: #fff;
+}
+
+input[type=checkbox] {
+    margin-top: 30px;
+}
+
+.leftBox label {
+    font-size: 14px;
+}
+
+.leftBox button {
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftBox button:hover {
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+}
+.leftBox button span {
+    display: inline-block;
+    width: 0px;
+    overflow: hidden;
+    transition: width 0.5s;
+}
+.leftBox button:hover span {
+    width: 30px;
+
+}
+.rightBox a {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    min-width: 250px;
+    color: #fff;
+    font-size: 14px;
+    padding: 15px 30px;
+    text-decoration: none;
+}
+.rightBox a i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+.fb_Link {
+    background: #1778f2;
+}
+.tw_Link {
+    background: #1da1f2;
+}
+.g_Link {
+    background: #ea4335;
+}
+.login_msg {
+    color: #fff;
+    margin-top: 30px;
+    font-size: 15px;
+}
+.login_msg a{
+    color: #ea4335;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.login_msg a:hover {
+    text-decoration: underline;
+}
+.mybg {
+    background-image: url("https://png.pngtree.com/background/20230524/original/pngtree-an-aerial-view-of-a-highway-junction-at-night-picture-image_2707640.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

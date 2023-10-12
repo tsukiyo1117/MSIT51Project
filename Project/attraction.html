@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/Slideshow_Gallery.css">
+    <!-- <link rel="stylesheet" href="./js/Slideshow_Gallery.js"> -->
+    <!-- <script src="js/Slideshow_Gallery.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <style>
+        .parallax {
+            /* The image used */
+            background-image: url("img/attractions/attractions02.jpg");
+
+            /* Set a specific height */
+            min-height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        .header {
+            background-image: url("img/attractions/attractions01.jpg");
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .header>h2,
+        .header>p {
+            color: white;
+        }
+
+        #navbar1 {
+            overflow: hidden;
+            float: left;
+            border-radius: 20px;
+            height: 51px;
+        }
+
+        #navbar2 {
+            overflow: hidden;
+            background-color: #333;
+            float: right;
+            border-radius: 20px;
+        }
+
+        #menu a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #menu a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #menu a.active {
+            position: relative;
+            background-color: #04AA6D;
+            color: white;
+            /* bottom: 12px; */
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+        .active img {
+            position: relative;
+            height: 30px;
+            /* top: 8px */
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .mc-ft__links {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            display: flex;
+            flex-direction: row;
+            margin-left: 600px;
+        }
+
+        .mc-ft__block {
+            width: 247px;
+        }
+
+        .mc-ft__block-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .mc-ft__link-list {
+            font-size: 14px;
+            list-style: none;
+        }
+
+        .mc-ft__link-item {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 2px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial;
+        }
+
+        .myrow {
+            margin: 10px -16px;
+        }
+
+        /* Add padding BETWEEN each column */
+        .myrow,
+        .myrow>.column {
+            padding: 8px;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .mycolumn {
+            float: left;
+            width: 33.33%;
+            display: none;
+            /* Hide all elements by default */
+        }
+
+        /* Clear floats after rows */
+        .myrow:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Content */
+        .mycontent {
+            background-color: white;
+            padding: 10px;
+            height: 600px;
+        }
+
+        /* The "show" class is added to the filtered elements */
+        .show {
+            display: block;
+        }
+
+        /* Style the buttons */
+        .btn {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ddd;
+        }
+
+        .btn.btnactive {
+            background-color: #666;
+            color: white;
+        }
+
+        .content h3 {
+            font-size: 20xp;
+        }
+    </style>
+</head>
+
+<body onload="">
+
+    <div class="header">
+        <h2>We Go the <br>
+            Extra Mile for You</h2>
+        <p>Need a lift? We can help.
+            SF ’s most reliable taxi service since 2003</p>
+    </div>
+    <div id="menu">
+        <div id="navbar1">
+            <a class="active" href="./home.html"><img src="./img/Car-Icon1.png"> BAYSIDE
+                TAXI</a>
+
+        </div>
+        <div id="navbar2" style="z-index: 9999;">
+            <a href="./VIP_Service.html">包車出遊</a>
+            <!-- <a href="http://127.0.0.1:5500/Project/Airport_Transfer.html">機場包車</a> -->
+            <a href="./attraction.html">各區景點</a>
+            <a href="./SignUp.html">加入會員</a>
+            <a href="./login.html">會員登入</a>
+        </div>
+    </div>
+
+    <div class="content"></div>
+
+
+    <div style="z-index: -1; position: relative; margin: 0 300px;">
+        <!-- Container for the image gallery -->
+        <div class="container">
+
+            <!-- Full-width images with number text -->
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="./img/attractions/attractions10.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="img/attractions/attractions02.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="img/attractions/attractions01.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="img/attractions/attractions07.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="img/attractions/attractions06.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="img/attractions/attractions05.jpg" style="width:100%">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+
+            <!-- Image text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <!-- Thumbnail images -->
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="img/attractions/attractions10.jpg" style="width:100%"
+                        onclick="currentSlide(1)" alt="清水斷崖">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="img/attractions/attractions02.jpg" style="width:100%"
+                        onclick="currentSlide(2)" alt="陽明山">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="img/attractions/attractions01.jpg" style="width:100%"
+                        onclick="currentSlide(3)" alt="日月潭">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="img/attractions/attractions07.jpg" style="width:100%"
+                        onclick="currentSlide(4)" alt="清境農場">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="img/attractions/attractions06.jpg" style="width:100%"
+                        onclick="currentSlide(5)" alt="墾丁">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="img/attractions/attractions05.jpg" style="width:100%"
+                        onclick="currentSlide(6)" alt="九份">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="padding: 30px;">
+        <div id="myBtnContainer">
+            <button class="btn btnactive" onclick="filterSelection('all')"> ALL</button>
+            <button class="btn" onclick="filterSelection('domestic')"> 台灣</button>
+            <button class="btn" onclick="filterSelection('foreign')"> 國外</button>
+        </div>
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="myrow">
+            <div class="mycolumn domestic">
+                <div class="mycontent" >
+                    <img src="https://newtaipei.travel/content/images/attractions/25419/640x480_attractions-image-x_d23esh1ksgpw72a6rfkw.jpg" alt="Mountains" style="width:100%">
+                    <h3>新北-九份</h3>
+                    <p>旅客可在蜿蜒的九份巷弄中探險，從不同角度欣賞九份之美。 走進茶坊、戲院，感受九份文化魅力若是想遠離熙攘的人潮、想停留休憩一下，不妨走進茶坊、茶藝館，認識飲茶文化、了解精緻茶具，還可以品茗搭配糕點，享受清幽、恬靜時光。也可以踏入九份第一座戲台&mdash;昇平戲院，戲院裡復古售票口、老電影海報及販賣部展示，呈現了1960年代戲院風格，值得旅客前來體驗舊時電影院氛圍。</p>
+                </div>
+            </div>
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="https://www.travel.taipei/image/63822" alt="Lights" style="width:100%">
+                    <h3>台北-北投</h3>
+                    <p>文物館始建於一九二０年代，作工精緻，為台灣現存規模最大的單幢日式純木造建築之一。日治時期為日本軍官俱樂部，一度為神風特攻隊所用，光復後並成為外交部之佳山招待所，現為私人所有，是展覽民藝骨董之處。園區內的茶藝館建於一九四０年代，規模小巧，其傳統日式落水庭園極具建築藝術價值，與文物館建築共構完整的建築群。</p>
+                </div>
+            </div>
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="https://www.travel.taipei/image/63378" alt="Nature" style="width:100%">
+                    <h3>台北-陽明山</h3>
+                    <p>冷水坑溫泉位在七星山與麻瘋山（七股山）間的東側谷地，原是一標準的爆裂口，後遭天然侵蝕及人為開墾，僅剩下不明顯的凹谷外形，主要的岩石為凝灰石角礫岩及紫蘇輝石角閃石安山岩，泉源附近岩質大部分受熱液換質作用，呈黏土化。冷水坑地底湧出的泉水約在攝氏40度左右，遠低於其它溫泉區水溫因而得名。這裡也是台灣唯一的沉澱硫磺礦床，泉水呈現乳白色，因而被稱為牛奶池。冷水坑溫泉是地下水間接傳導加熱而成的，有中性碳酸氫鹽泉及弱酸性硫酸鹽泉兩種不同泉質。</p>
+                </div>
+            </div>
+
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="https://newtaipei.travel/content/images/attractions/39601/640x480_attractions-image-_o33flblhe-wl7987h1daq.jpg" alt="Car" style="width:100%">
+                    <h3>新北-北海岸</h3>
+                    <p>野柳地質公園馳名中外的女王頭及仙女鞋，唯妙唯肖的的造型，以及歐亞板塊與菲律賓板塊推擠造成的單面山，令人讚嘆大自然鬼斧神工的神奇。海蝕平台擁有的潮間帶和季節性候鳥的天堂。觀音山的俊秀奇麗，登上硬漢嶺遠望，蜿蜒的淡水河不捨晝夜地匯入大海，台北盆地的繁華美景更是盡收眼底。沿途的秀麗景致與善用觀音山高處望遠的特點，特別規劃6條健行步道，步道可分為福隆山、牛港稜、硬漢嶺、尖山、楓櫃斗湖及牛寮埔登山步道。</p>
+                </div>
+            </div>
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="https://travel.taichung.gov.tw/content/images/attractions/12571/640x480_Filedata635548470099230716.jpg" alt="Car" style="width:100%">
+                    <h3>台中-高美濕地</h3>
+                    <p>高美濕地雖然面積不大，但是由於泥質及沙質灘地兼具，加上與河口沼澤地帶鑲嵌在一起，所以孕育了豐富又複雜的濕地生態，以及目前所知全臺灣最大族群的雲林莞草區，形成乾濕相間伴有植物生長的複雜地形，因為地形多變，生態種類亦相當複雜，主要種類為鳥類、魚類、蟹類及其他無脊椎類等生物；每年秋冬之際，都會有大批的候鳥前往作客，不管是短暫的休息，或是駐足過冬，都為高美濕地增添了不同的生態風貌。</p>
+                </div>
+            </div>
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="./img/attractions/TaiN01.jpg" alt="Car" style="width:100%">
+                    <h3>台南-曾文水庫</h3>
+                    <p>曾文水庫風景區坐擁煙波浩瀚的山水之色，整個園區內規劃了10個活動遊憩區，包括溪畔遊樂區、木瓜園旅館區、大壩景觀區、湖濱別墅區等，其觀光發展條件優越，也使得旅人有更多重的體驗。走上風景區的至高點&mdash;觀景樓，將收穫曾文水庫無死角的壯闊景色。旅人更能乘遊艇遊湖賞鷹，探訪曾文水庫秘境，飽覽山水奇景。騎著自行車沿著水庫內全程約10公里環湖道路，開啟一場鐵馬輕旅行也別有一番快意，多元的遊玩體驗任君挑選。走進綠蔭，去邂逅「曾文之眼」，一座外牆全以玻璃帷幕打造而成的開放式遊客中心，在陽光下，綠意盎然的自然風光和樹影倒映於建築之上，成功讓人為建築與自然生態完美共存，曾文之眼的建築之美絕對值得一探究竟。</p>
+                </div>
+            </div>
+
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="https://travel.taichung.gov.tw/content/images/attractions/4227/640x480_Filedata635187481308298203.jpg" alt="Car" style="width:100%">
+                    <h3>台中-望高寮</h3>
+                    <p>由於地形的優勢，使得望高寮成為一觀日及賞星光的最佳去處。近期更吸引了小販商家到此形成集市，宛如一座不夜城，警車也常到此巡邏而安全許多，附近的嶺東科技大學與其他學校的學生也常結伴到此遊玩，望高寮已成為情侶浪漫夜景。</p>
+                </div>
+            </div>
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="./img/attractions/TaiN02.jpg" alt="Car" style="width:100%">
+                    <h3>台南-白河林初埤木棉花道</h3>
+                    <p>2015年經西班牙休閒旅遊網站「Boredpanda」選為被譽為全球最美花海街道之一，白河「林初埤木棉花道」，連綿超過數百公尺的道路上，木棉花火紅盛開的美景是網紅IG人氣打卡聖地。染得橘紅的棉花道，兩側有著碧綠的稻田與紅、綠相間的蓮田，遼闊的田野風情與藍天白雲相互輝映，璞質的風情彷彿是一幅渾然天成的鄉間田園畫作，年年吸引攝影同好專挑日出晨曦或夕陽拍攝，展現出花道不同的風貌，記錄木棉花道最美的瞬間。</p>
+                </div>
+            </div>
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="https://khh.travel/content/images/Attractions/20096/640x480_attractions-image-uvtvvevo5egnvisijj_b8a.jpg" alt="Car" style="width:100%">
+                    <h3>高雄-西子灣</h3>
+                    <p>西子灣以夕陽美景及天然礁石聞名，區內包括了西子灣海水浴場、海濱公園、打狗英國領事館....等景點；可觀海景、遠眺高雄港；海水浴場極富熱帶氣息、南國風情，每當夜幕低垂，晚霞的照耀，漁船燈火閃爍其間，呈現海天一色美景。西子灣的西子夕照為高雄八大勝景之一，每到日落時分，沿著海岸護堤的石砌欄杆，成為欣賞落日餘暉的最佳位置。在西子灣不遠處，哨船砲臺之門額題字為「雄鎮北門」，字體碩大，筆力雄渾。</p>
+                </div>
+            </div>
+            <div class="mycolumn domestic">
+                <div class="mycontent">
+                    <img src="https://khh.travel/content/images/Attractions/20283/640x480_attractions-image-ytaqbbtunuetcp2qdfg0fg.jpg" alt="Car" style="width:100%">
+                    <h3>高雄-茂林國家風景區</h3>
+                    <p>茂林谷茂林谷位於茂林里東側之濁口溪與支流木勝溪之交會處，原名「羅木斯」，魯凱族語意為「美麗的山谷」，在羅木斯吊橋東北側河域寬廣的濁口溪溪谷中，可見泓深邃甚藍的秀麗深潭，這是岩壁形成曲流的濁口溪，與支流木勝溪交匯聚集而成藍水潭，茂林飛瀑傾瀉而下非常壯觀，但藍水潭底有漩渦，當地人戲稱為「少女陷阱」，不宜下水戲水或游泳，可以到瀑布前造型典雅的涼亭觀瀑，以心靈享受蓬勃壯麗的大自然美景。</p>
+                </div>
+            </div>
+            <div class="mycolumn foreign">
+                <div class="mycontent">
+                    <img src="https://www.kkday.com/zh-hk/blog/wp-content/uploads/Japan_Sakura_Ashutterstock_347638316-644x444.jpg" alt="Car" style="width:100%">
+                    <h3>東京-富士山河口湖</h3>
+                    <p>一探富士山河口湖下的震撼美景，行程從東京新宿出發，走訪富士山。在河口湖欣賞倒映在湖面上的富士山絕美景致，再到最愛的御殿場 Outlet 瘋狂購物。參加KKday富士山追櫻一日遊，有專業導遊及來回專車接送帶你欣賞漫天的櫻花雨，景色美不勝收</p>
+                </div>
+            </div>
+            <div class="mycolumn foreign">
+                <div class="mycontent">
+                    <img src="https://www.kkday.com/zh-hk/blog/wp-content/uploads/png-1-1-644x425.jpg" alt="Car" style="width:100%">
+                    <h3>東京-新倉富士淺間神社</h3>
+                    <p>想要觀賞富士山，河口湖是許多人最愛來的一處人氣景點，其中又以「新倉富士淺間神社」上的「新倉山淺間公園」位置絕佳，可以說是人氣第一。爬上398階的的忠靈塔，秋天有楓葉、春天則是鋪著粉紅色花海的櫻花，富士山景在每個山坡處皆有不同風情，就像是設計好的背景牆美的不可思議。雖然我們是冬天來，但景色一絲不減其魅力，只是在爬的時候會感嘆，旅遊真的要趁早，雖然爬山氣喘吁吁但相當值得阿！</p>
+                </div>
+            </div>
+            <div class="mycolumn foreign">
+                <div class="mycontent">
+                    <img src="https://media.timeout.com/images/105921154/750/422/image.jpg" alt="Car" style="width:100%">
+                    <h3>大阪-USJ</h3>
+                    <p>大阪環球影城，飄兒打包票是絕對好玩的大阪景點！大人小孩老人都可以在這裡發現自己童趣的一面，而且玩到瘋，當然，由於飄兒是跟著哈利長大的小孩，而且亞洲就只有大阪有哈利波特樂園，這裡簡直活像是電影場景的活米村一般，大家準備變身巫師來趟魔法之旅了嗎？</p>
+                </div>
+            </div>
+            <div class="mycolumn foreign">
+                <div class="mycontent">
+                    <img src="https://traveltbc.com/wp-content/uploads/2021/06/inariyama019-624x416.jpg" alt="Car" style="width:100%">
+                    <h3>京都-伏見稻荷</h3>
+                    <p>伏見稻荷大社建於西元711年，長達1,300多年歷史，祭奉神明──稻荷大神 (注意祂不是狐狸喔，狐狸是使者)。稻荷大神掌管的是農作豐收、生意興隆、家庭安全等，被視為是諸願望皆得實現之神，每年遊客數以萬計。</p>
+                </div>
+            </div>
+            <div class="mycolumn foreign">
+                <div class="mycontent">
+                    <img src="https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1659609150/blog/sog7xgoj4bfmiorzyk4s.webp" alt="Car" style="width:100%">
+                    <h3>新加坡-濱海灣花園</h3>
+                    <p>整個花園有兩個臨海的建築，分別是「花之穹頂」和「雲霧森林」，使用鋼鐵與玻璃建造，超棒的景觀視野無庸置疑，前者以地中海植物為主，後者則是熱帶高海拔植物，共有38萬株來自世界各地的珍奇花卉，另外在夜晚燈光秀下的「天空樹」，更是美輪美奐，這個由18個高大樹狀環繞的區域，猶如電影阿凡達的幻境般不可思議！</p>
+                </div>
+            </div>
+            <!-- END GRID -->
+        </div>
+    </div>
+    <hr>
+    <div class="mc-ft__cnt">
+        <div class="mc-ft__links">
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">聯繫我們</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">顧客服務</li>
+                    <li class="mc-ft__list-item">一站式服務保障</li>
+                    <li class="mc-ft__list-item">網站意見</li>
+                </ul>
+            </div>
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">關於</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">關於我們</li>
+                    <li class="mc-ft__list-item">媒體訊息</li>
+                    <li class="mc-ft__list-item">條款及細則</li>
+                    <li class="mc-ft__list-item">隱私條款</li>
+                    <li class="mc-ft__list-item">Do Not Sell My Personal Information</li>
+                </ul>
+            </div>
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">其他服務</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">投資者關係</li>
+                    <li class="mc-ft__list-item">分銷夥伴合作計畫</li>
+                    <li class="mc-ft__list-item">成為當地體驗供應商</li>
+                    <li class="mc-ft__list-item">資訊安全性</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("menu");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+        setInterval(function () {
+	        plusSlides(1);
+        }, 3000);
+
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("mycolumn");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("btnactive");
+                current[0].className = current[0].className.replace(" btnactive", "");
+                this.className += " btnactive";
+            });
+        }
+        
+        // let url = "./JSON/AttractionList.json"
+        let URL = "./JSON/AttractionList.json"
+        // $.get(url, function(data) {
+        //     Array.from(data).forEach(function(item) {
+        //         console.log(item);
+        //         // if(item.Name == "日月潭") {
+        //         //     console.log("OK");
+        //         // } else{
+        //         //     console.log("no")
+        //         // }
+                
+        //     })
+        // })
+        fetch(URL)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                let detail = data.Attractions
+                let TaiC = [],
+                    TaiP = [],
+                    TaiN = [],
+                    TaoY = [],
+                    NTaiP = [],
+                    KaoH = []
+                let i = 0,
+                    j = 0,
+                    k = 0,
+                    l = 0,
+                    m = 0,
+                    n = 0
+                let num = 0
+                detail.forEach(function(item) {
+                    if(item.PostalAddress.City == "臺中市"){
+                        TaiC[i] = item;
+                        i++;
+                    } else if (item.PostalAddress.City == "臺北市"){
+                        TaiP[j] = item;
+                        j++;
+                    } else if (item.PostalAddress.City == "臺南市"){
+                        TaiN[k] = item;
+                        k++;
+                    } else if (item.PostalAddress.City == "桃園市"){
+                        TaoY[l] = item;
+                        l++;
+                    } else if (item.PostalAddress.City == "新北市"){
+                        NTaiP[m] = item;
+                        m++;
+                    } else if (item.PostalAddress.City == "高雄市"){
+                        KaoH[n] = item;
+                        n++;
+                    }
+                })
+                console.log(NTaiP[158])
+                NTaiP[158].AttractionName
+                
+                // console.log(TaiC, TaiN, TaiP, TaoY, NTaiP, KaoH)
+            })
+            
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,937 @@
+
+.parallax {
+    /* The image used */
+    background-image: url("img/attractions/attractions02.jpg");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background-image: url("../img/taix.PNG");
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h2,
+p {
+    color: white;
+}
+
+#navbar1 {
+    overflow: hidden;
+    float: left;
+    border-radius: 20px;
+    height: 51px;
+}
+
+#navbar2 {
+    overflow: hidden;
+    background-color: #333;
+    float: right;
+    border-radius: 20px;
+}
+
+#menu a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#menu a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#menu a.active {
+    position: relative;
+    background-color: #04AA6D;
+    color: white;
+    bottom: 12px;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.active img {
+    position: relative;
+    height: 30px;
+    top: 8px
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-image {
+    /* Full height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Images used */
+.img1 {
+    background-image: url("img/attractions/attractions09.jpg");
+}
+
+.img2 {
+    background-image: url("img/attractions/attractions03.jpg");
+}
+
+.img3 {
+    background-image: url("img/attractions/attractions04.jpg");
+}
+
+.img4 {
+    background-image: url("img/attractions/attractions05.jpg");
+}
+
+.img5 {
+    background-image: url("img/attractions/attractions06.jpg");
+}
+
+.img6 {
+    background-image: url("img/attractions/attractions08.jpg");
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+    border: 10px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -10%);
+    z-index: 2;
+    width: 900px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.bg-text p {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    margin: 0 100px;
+    font-size: 30px;
+}
+
+.mc-ft__links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: flex;
+    flex-direction: row;
+    margin-left: 600px;
+}
+
+.mc-ft__block {
+    width: 247px;
+}
+
+.mc-ft__block-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.mc-ft__link-list {
+    font-size: 14px;
+    list-style: none;
+}
+
+.mc-ft__link-item {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+}
+
+.plan {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.selection-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+
+
+.selection-head .option-action {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.selection-head .option-content h3 {
+    margin-top: 0;
+    margin-right: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.selection-head .option-content h3 span {
+    vertical-align: middle;
+}
+
+.selection-head .option-content h3 span {
+    vertical-align: middle;
+}
+
+.label {
+    font-size: 1rem;
+    padding: 3px 8px;
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.label-danger {
+    background-color: #0274be;
+}
+
+.selection-head .option-content ul {
+    padding-left: 20px;
+    color: #666;
+    margin: 0;
+}
+
+.selection-head .option-action {
+    text-align: right;
+    white-space: nowrap;
+}
+.mylist {
+    position: relative;
+    margin: 0 80px;
+}
+
+.keepright {
+    float: right;
+    color: #3a3a3a;
+}
+
+.list-icon {
+    list-style: none;
+}
+
+.list-icon li::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'ForkAwesome';
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+}
+
+.list-check li::before {
+    content: '\f00c';
+    color: #0693e3;
+}
+
+.list-close li::before {
+    content: '\f00d';
+}
+
+figure.wp-block-gallery.has-nested-images {
+    display: flex;
+    gap: 5px;
+}
+
+.review-size img {
+    max-height: 100px;
+}
+
+.fb-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.moretestimonials {
+    padding: 20px 0px 0px 55px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #4080ff;
+}
+
+.moretestimonials:after {
+    font-family: forkAwesome;
+    display: inline-block;
+    content: '\f107';
+    transform: translatey(0px);
+    transition: all .2s linear;
+    color: var(--main-color-dark);
+    padding-left: 10px;
+}
+
+.moretestimonials:hover:after {
+    transform: translatey(5px);
+    color: #1a1a1a;
+}
+
+.wp-facebook-review {
+    display: none;
+}
+
+.wpacedit {
+    line-height: 20px;
+    color: #333;
+    display: inline;
+}
+
+.wp-fbrevedit .wp-facebook-left {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.wp-fbrevedit .wp-facebook-right {
+    display: table-cell;
+    vertical-align: top !;
+    width: 10000px;
+}
+
+.wp-fbrevedit .wp-facebook-left img {
+    border: none;
+    float: left;
+    height: 50px;
+    width: 50px;
+    max-width: none;
+    margin-right: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+}
+
+.wp-fbrevedit .wp-facebook-name {
+    color: #427fed;
+    font-weight: bold;
+    margin: 0 0 2px;
+    padding-right: 6px;
+    text-decoration: none;
+}
+
+.wp-fbrevedit .wp-facebook-rating {
+    color: #4080ff;
+    font-size: 20px;
+    margin: 0 6px 0 0;
+    vertical-align: middle;
+}
+
+.wp-fbrevedit .wp-facebook-rating:after {
+    font-family: forkAwesome;
+    content: '\f005  \f005  \f005  \f005  \f005';
+    padding: 0px 10px;
+}
+
+.wp-fbrevedit .wp-facebook-powered {
+    color: #999;
+    margin: 6px 0 0;
+}
+
+.wp-fbrevedit .wp-facebook-powered span {
+    color: #4080ff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.wp-fbrevedit .wp-facebook-content-inner {
+    position: relative;
+    min-height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.wp-fbrevedit .wp-facebook-review {
+    margin-top: 15px !important;
+}
+
+.wp-fbrevedit .wp-facebook-time {
+    color: #999;
+    font-size: 13px;
+}
+
+.wp-fbrevedit .wp-facebook-text {
+    color: #222;
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.wp-fbrevedit .wp-facebook-text:before {
+    font-family: forkAwesome;
+    content: '\f005  \f005  \f005  \f005  \f005';
+    padding-right: 5px;
+    color: #FBC02D;
+}
+
+.subtitledith3 {
+    color: #db9423 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.subtitledith3:before {
+    position: relative;
+    content: '#';
+    color: #db9423;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.subtitledit {
+    color: #db9423 !important;
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+    margin-top: 30px !important;
+    font-size: 30px !important;
+}
+
+.subtitlebreakline {
+    height: 5px;
+    width: 165px;
+    background: linear-gradient(90deg, #db9423, rgba(237, 72, 72, 0));
+    margin-bottom: 5px !important;
+}
+
+.keepcenter {
+    text-align: center;
+}
+
+.wp-stars {
+    color: #4080ff !important;
+}
+
+.wp-facebook-hide {
+    display: none;
+}
+
+.wp-facebook-time,
+.wp-facebook-powered {
+    line-height: 10px
+}
+
+.processlist li {
+    padding-top: 1em;
+}
+
+.noneborder,
+.noneborder tr td {
+    border: none;
+    line-height: 1;
+    margin: 0px;
+    table-layout: fixed
+}
+
+.selection-option {
+    color: #ffffff;
+    background-color: #3197d6;
+    border-radius: 0;
+    padding: 10px 20px;
+    line-height: 1;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    transition: 0.3s;
+    font-size: 15px;
+    border-radius: 0px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #636363;
+}
+
+.tablinks {
+    color: #000;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #636363;
+    color: #fff;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.carset {
+    border: 5px #ddd outset;
+    border-radius: 5px;
+}
+
+.inline-no-wrap span {
+    white-space: nowrap;
+}
+
+.footerh3 {
+    color: #fff !important;
+    font-size: 3em !important;
+}
+
+.footerstyle {
+    text-align: center;
+    color: #fff;
+}
+
+.footerstyle h4 {
+    color: #fff;
+    margin: 20px 0px 0px 0px;
+}
+
+.footerstyle .uagb-ifb-separator {
+    border-top-color: #db9423;
+}
+
+.footerstyle ul {
+    list-style: none;
+    margin: 0;
+}
+
+.footerstyle a {
+    font-size: 18px;
+    color: #efefef;
+}
+
+.footerstyle a:hover {
+    color: #db9423;
+}
+
+.footerstyle .iconwidth {
+    width: 20px;
+    border-radius: 2px;
+    position: absolute;
+    margin: 7px -25px;
+}
+
+.footerstyle .qrwidth {
+    width: 150px;
+    border-radius: 5px;
+    margin-bottom: 20px
+}
+
+@media (max-width:1057px) {
+
+    .main-header-menu .menu-link,
+    .main-header-menu a {
+        padding: 0 0.5em;
+    }
+}
+
+.uagb-block-9eb5bdee .uagb-heading-text {
+    font-size: 4em;
+}
+
+@media (max-width:544px) {
+    .ast-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .site-branding {
+        padding-right: 0px !important;
+    }
+
+    .ast-button {
+        padding: 8px !important;
+        line-height: 1;
+        font-size: 12px;
+    }
+
+    .ast-masthead-custom-menu-items {
+        padding: 0px 5px 0px 0px;
+    }
+
+    .custom-logo-link img {
+        max-width: 150px !important;
+    }
+
+    .uagb-block-9eb5bdee .uagb-heading-text {
+        font-size: 2.5em;
+    }
+}
+
+.ast-button,
+.wp-block-button .wp-block-button__link {
+    padding: 10px 15px;
+}
+
+.ast-site-identity {
+    padding: 0.5em 0 !important;
+}
+
+.optional {
+    display: none;
+}
+
+.notedlist {
+    margin-left: 1.5rem;
+    color: #db9423;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/*accordion start*/
+.plan {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 2px solid #eee;
+    margin-bottom: 30px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.4);
+}
+
+.is-open {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+}
+
+.accordion {
+    color: #444;
+    transition: 0.4s;
+    padding: 15px 18px;
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.panel .panelinner {
+    padding: 0px 18px 20px 18px;
+}
+
+.panel .panelinner h5 {
+    margin-bottom: 0;
+}
+
+.panel .panelinner .infoboard {
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    padding: 15px 18px;
+    margin-bottom: 20px;
+}
+
+.panel .panelinner .infoboard ul {
+    padding-left: 20px;
+    color: #666;
+    margin: 20px 0px 0px 0px;
+}
+
+.panel hr {
+    width: 95%;
+}
+
+.selection-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.selection-head .option-content {
+    flex-grow: 1;
+}
+
+.selection-head .option-action {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.selection-head .option-content h3 {
+    margin-top: 0;
+    margin-right: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.selection-head .option-content h3 span {
+    vertical-align: middle;
+}
+
+.label-danger {
+    background-color: #0274be;
+}
+
+.label {
+    font-size: 1rem;
+    padding: 3px 8px;
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.selection-head .option-content ul {
+    padding-left: 20px;
+    color: #666;
+    margin: 0;
+}
+
+.selection-head .option-action .product-pricing {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 45px;
+    white-space: nowrap;
+    vertical-align: middle;
+    align-content: center;
+    align-items: baseline;
+}
+
+.selection-head .option-action .product-pricing h4 {
+    margin-bottom: -2px;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.origin-price {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/*accordion end*/
+.qa-content table {
+    margin: 1em;
+}
+
+.titletable {
+    padding: 0.5em 0em;
+    border-bottom: 2px solid rgb(255, 152, 0);
+    position: relative;
+    display: inline-block;
+}
+
+.titletable:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 50px;
+    border-bottom: 3px solid #DF5D22;
+}
+
+.qa-content table .rowtable {
+    background-color: #e6e6e6;
+}
+
+.qa-content h5 {
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+.qa-content p {
+    padding-left: 1em;
+    margin-bottom: 0em;
+}
+
+.lineheight18 {
+    font-size: 12px !important;
+    line-height: 18px;
+}
+
+.lightbox-thumb {
+    max-width: 300px !important;
+    margin: 0px 5px 5px 0px;
+}
+
+.spacetop {
+    margin-top: 80px;
+}
+
+.maxwidth120 {
+    max-width: 120px;
+}
+
+.locationnav .planinfo button {
+    padding: 8px 5px;
+    margin-top: 1em;
+}
+
+.locationnav .active {
+    color: #BF360C;
+    font-weight: 700;
+}
+
+.locationnav .active:after {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    position: relative;
+    top: 4px;
+    right: -10px;
+    border-radius: 4px;
+    background-color: #BF360C;
+}
+
+.locationnav {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+@media (max-width: 782px) {
+    .wp-block-columns {
+        flex-direction: column;
+    }
+
+    .locationnav .planinfo button {
+        position: absolute;
+        right: 1em;
+        margin-top: 0px;
+    }
+
+    .locationnav .active:after {
+        top: 0px;
+        right: -2px;
+        display: block;
+        width: 50px;
+        height: 4px;
+    }
+
+    .locationnav {
+        position: absolute;
+        padding: 8px 0;
+        background: #ffffff;
+        display: flex;
+        width: 100vw;
+        left: 0px;
+        top: -80px;
+        z-index: 99;
+        box-shadow: none;
+        cursor: grab;
+        overflow: auto;
+    }
+
+    .locationnav li {
+        padding-left: 1em;
+        white-space: nowrap;
+    }
+}
+
+.wp-stars {
+    color: #db9423;
+}
+
+.detail-text {
+    color: #666666;
+}
+
+.site-header {
+    position: fixed !important;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    transition: .3s;
+    top: 0px;
+    box-shadow: -3px 2px 8px 1px rgba(47, 47, 47, .12);
+}
+
+.main-header-bar {
+    padding: 0 !important;
+    line-height: 2;
+}
+
+.boxstyle {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.buttonfull {
+    width: 100%;
+}
+
+.buttonfull a {
+    width: 100%;
+}
+
+figcaption {
+    pointer-events: none;
+}

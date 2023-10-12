@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        body {
+            margin: 0;
+            font-size: 28px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            background-image: url("img/attractions/attractions01.jpg");
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h2,
+        p {
+            color: white;
+        }
+
+        #navbar1 {
+            overflow: hidden;
+            float: left;
+            border-radius: 20px;
+            height: 51px;
+        }
+
+        #navbar2 {
+            overflow: hidden;
+            background-color: #333;
+            float: right;
+            border-radius: 20px;
+        }
+
+        #menu a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #menu a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #menu a.active {
+            position: relative;
+            background-color: #04AA6D;
+            color: white;
+            bottom: 12px;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+        .active img {
+            position: relative;
+            height: 30px;
+            top: 8px
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
+        .mc-ft__links {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            display: flex;
+            flex-direction: row;
+            margin-left: 600px;
+        }
+
+        .mc-ft__block {
+            width: 247px;
+        }
+
+        .mc-ft__block-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .mc-ft__link-list {
+            font-size: 14px;
+            list-style: none;
+        }
+
+        .mc-ft__link-item {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>We Go the <br>
+            Extra Mile for You</h2>
+        <p>Need a lift? We can help.
+            SF ’s most reliable taxi service since 2003</p>
+    </div>
+    <div id="menu">
+        <div id="navbar1">
+            <a class="active" href="http://127.0.0.1:5500/Project/home.html"><img src="./img/Car-Icon1.png"> BAYSIDE TAXI</a>
+
+        </div>
+        <div id="navbar2">
+            <a href="http://127.0.0.1:5500/Project/VIP_Service.html">包車出遊</a>
+            <a href="http://127.0.0.1:5500/Project/Airport_Transfer.html">機場包車</a>
+            <a href="http://127.0.0.1:5500/Project/attraction.html">各區景點</a>
+            <a href="http://127.0.0.1:5500/Project/SignUp.html">加入會員</a>
+            <a href="http://127.0.0.1:5500/Project/login.html">會員登入</a>
+        </div>
+    </div>
+
+    <div class="content"></div>
+    <div>
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+    </div>
+
+<hr>
+    <div class="mc-ft__cnt">
+        <div class="mc-ft__links" >
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">聯繫我們</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">顧客服務</li>
+                    <li class="mc-ft__list-item">一站式服務保障</li>
+                    <li class="mc-ft__list-item">網站意見</li>
+                </ul>
+            </div>
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">關於</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">關於我們</li>
+                    <li class="mc-ft__list-item">媒體訊息</li>
+                    <li class="mc-ft__list-item">條款及細則</li>
+                    <li class="mc-ft__list-item">隱私條款</li>
+                    <li class="mc-ft__list-item">Do Not Sell My Personal Information</li>
+                </ul>
+            </div>
+            <div class="mc-ft__block">
+                <h3 class="mc-ft__block-title">其他服務</h3>
+                <ul class="mc-ft__link-list">
+                    <li class="mc-ft__list-item">投資者關係</li>
+                    <li class="mc-ft__list-item">分銷夥伴合作計畫</li>
+                    <li class="mc-ft__list-item">成為當地體驗供應商</li>
+                    <li class="mc-ft__list-item">資訊安全性</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("menu");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
